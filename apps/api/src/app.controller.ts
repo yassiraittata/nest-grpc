@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { CreateTodoDto } from './dtos/create-dto.dto';
 import { AppService } from './app.service';
+import { PostTodoDTO } from 'proto/todo';
 
 @Controller('todos')
 export class AppController {
@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @Post()
-  createTodo(@Body() dto: CreateTodoDto) {
+  createTodo(@Body() dto: PostTodoDTO) {
     return this.appService.createTodo(dto);
   }
 }
