@@ -23,8 +23,8 @@
     },
     "todo": {
       "type": "application",
-      "root": "apps/todo",
-      "entryFile": "main",
+      "root": "/apps/todo",
+      "entryFile": "src/main",
       "sourceRoot": "./",
       "compilerOptions": {
         "tsConfigPath": "apps/todo/tsconfig.app.json",
