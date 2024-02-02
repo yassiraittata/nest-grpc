@@ -29,18 +29,18 @@ export const TODO_PACKAGE_NAME = "todo";
 export interface todoServiceClient {
   postTodo(request: PostTodoDTO): Observable<Todo>;
 
-  getTodo(request: Empty): Observable<Todos>;
+  getTodos(request: Empty): Observable<Todos>;
 }
 
 export interface todoServiceController {
   postTodo(request: PostTodoDTO): Promise<Todo> | Observable<Todo> | Todo;
 
-  getTodo(request: Empty): Promise<Todos> | Observable<Todos> | Todos;
+  getTodos(request: Empty): Promise<Todos> | Observable<Todos> | Todos;
 }
 
 export function todoServiceControllerMethods() {
   return function (constructor: Function) {
-    const grpcMethods: string[] = ["postTodo", "getTodo"];
+    const grpcMethods: string[] = ["postTodo", "getTodos"];
     for (const method of grpcMethods) {
       const descriptor: any = Reflect.getOwnPropertyDescriptor(constructor.prototype, method);
       GrpcMethod("todoService", method)(constructor.prototype[method], method, descriptor);

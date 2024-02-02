@@ -4,7 +4,7 @@ package todo;
 
 service todoService {
     rpc PostTodo(PostTodoDTO) returns (Todo) {}
-    rpc GetTodo(Empty) returns (Todos) {}
+    rpc GetTodos(Empty) returns (Todos) {}
 }
 
 message Todo {
