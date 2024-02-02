@@ -11,8 +11,8 @@ import { AppService } from './app.service';
         name: 'TODO_SERVICE',
         transport: Transport.GRPC,
         options: {
-          package: 'hero',
-          protoPath: join(__dirname, 'hero/hero.proto'),
+          package: 'todo',
+          protoPath: join(__dirname, '../todo.proto'),
         },
       },
     ]),

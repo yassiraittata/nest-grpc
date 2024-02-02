@@ -6,10 +6,10 @@ import { TODO_SERVICE_NAME, todoServiceClient } from 'proto/todo';
 @Injectable()
 export class AppService implements OnModuleInit {
   private todoServiceClient: todoServiceClient;
-  constructor(@Inject('todo') private client: ClientGrpc) {}
+  constructor(@Inject('TODO_SERVICE') private client: ClientGrpc) {}
 
   getTodos() {
-    // this.client.send({ cmd: 'get-todos' });
+    return this.todoServiceClient.getTodos({})
   }
 
   createTodo(dto: CreateTodoDto) {
